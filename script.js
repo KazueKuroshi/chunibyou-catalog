@@ -1,4 +1,4 @@
-// 🔁 Loading screen
+// ⏳ Loading screen
 window.addEventListener("load", () => {
   document.getElementById("preloader").style.display = "none";
   loadProducts();
@@ -6,15 +6,16 @@ window.addEventListener("load", () => {
   setupLanguageToggle();
 });
 
-// 🧲 Ambil produk dari produk.json
+// 📦 Muat produk dari produk.json
 function loadProducts() {
   fetch("produk.json")
     .then(res => res.json())
     .then(data => {
       const grid = document.getElementById("productGrid");
-      data.forEach((item, i) => {
+      data.forEach(item => {
         const card = document.createElement("div");
         card.className = `card ${item.kategori}`;
+        if (item.class) card.classList.add(item.class);
         card.dataset.name = item.nama;
         card.dataset.description = item.detail;
         card.innerHTML = `
@@ -41,24 +42,24 @@ function setupThemeToggle() {
   });
 }
 
-// 🌐 Bahasa
+// 🌐 Ganti bahasa (demo)
 function setupLanguageToggle() {
   document.getElementById("languageSelect").addEventListener("change", e => {
     const lang = e.target.value;
-    alert(lang === "jp" ?
-      "✨ 言語を日本語に切り替えました（demo saja ya）" :
-      "✨ Bahasa diubah ke Indonesia (demo aktif)");
+    alert(lang === "jp"
+      ? "✨ 言語を日本語に切り替えました（demo saja ya）"
+      : "✨ Bahasa diubah ke Indonesia (mode demo)");
   });
 }
 
-// 🧠 Interaksi pengguna
+// 🧠 Interaksi produk
 function setupInteractions() {
-  // Modal
   const modal = document.getElementById("modal");
   const modalTitle = document.getElementById("modalTitle");
   const modalDesc = document.getElementById("modalDesc");
   const wishlistItems = document.getElementById("wishlistItems");
 
+  // Modal detail
   document.querySelectorAll(".detailBtn").forEach(btn => {
     btn.addEventListener("click", () => {
       const card = btn.closest(".card");
@@ -72,9 +73,8 @@ function setupInteractions() {
     modal.classList.add("hidden");
   });
 
-  // Wishlist (localStorage)
+  // Wishlist
   let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
   function renderWishlist() {
     wishlistItems.innerHTML = "";
     wishlist.forEach(name => {
@@ -96,7 +96,7 @@ function setupInteractions() {
     });
   });
 
-  // Filter
+  // Filter kategori
   document.querySelectorAll(".filter-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const filter = btn.dataset.filter;
@@ -109,7 +109,7 @@ function setupInteractions() {
     });
   });
 
-  // Fake alert
+  // Notifikasi restock palsu ✨
   document.getElementById("notifyBtn").addEventListener("click", () => {
     alert("✨ Kamu akan mendapat wahyu saat barang ini muncul kembali!");
   });
