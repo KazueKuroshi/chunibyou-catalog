@@ -1,0 +1,20 @@
+[
+  {
+    "nama": "Pedang Legenda",
+    "kategori": "merch",
+    "deskripsi": "Senjata tersegel dari klan keempat belas...",
+    "detail": "Senjata kuno dengan aura ungu berkedip.",
+    "badge": "Ultimate",
+    "image": "assets/img/produk1.jpg",
+    "wa": "https://wa.me/6281234567890?text=Saya tertarik dengan Pedang Legenda"
+  },
+  {
+    "nama": "Grimoire Hitam",
+    "kategori": "novel",
+    "deskripsi": "Buku sihir dengan isi yang hanya bisa dibaca saat bulan purnama...",
+    "detail": "Kitab sihir hitam yang mengandung mantra kuno dan larangan dimensional.",
+    "badge": "Limited",
+    "image": "assets/img/produk2.jpg",
+    "wa": "https://wa.me/6281234567890?text=Saya tertarik dengan Grimoire Hitam"
+  }
+]
