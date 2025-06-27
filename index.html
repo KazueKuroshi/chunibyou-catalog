@@ -1,33 +1,80 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chunibyou Market</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader">🔮 Memanggil energi dimensi lain...</div>
+  </div>
+
   <header class="header">
     <h1>✨ Chunibyou Market ✨</h1>
-    <button id="toggleMode">🌙 Mode Malam</button>
+    <div>
+      <select id="languageSelect">
+        <option value="id">Bahasa Indonesia</option>
+        <option value="jp">日本語</option>
+      </select>
+      <button id="toggleMode">🌙 Mode Malam</button>
+    </div>
   </header>
 
-  <main class="grid">
-    <div class="card">
+  <!-- Filter Kategori -->
+  <nav class="filter-bar">
+    <button class="filter-btn" data-filter="all">Semua</button>
+    <button class="filter-btn" data-filter="merch">Merch</button>
+    <button class="filter-btn" data-filter="novel">Novel</button>
+    <button class="filter-btn" data-filter="stiker">Stiker</button>
+  </nav>
+
+  <main class="grid" id="productGrid">
+    <div class="card merch" data-name="Pedang Legenda" data-description="Senjata kuno dengan aura ungu berkedip.">
+      <span class="badge">Ultimate</span>
       <img src="assets/img/produk1.jpg" alt="Produk A">
-      <h2>Produk A: Pedang Legenda Tersegel</h2>
-      <p>Sinopsis: Senjata kuno yang hanya bisa digunakan oleh yang terpilih…</p>
-      <a href="https://wa.me/6281234567890?text=Saya tertarik dengan Produk A" target="_blank">💬 Beli via WhatsApp</a>
+      <h2>Pedang Legenda</h2>
+      <p>Senjata tersegel dari klan keempat belas...</p>
+      <div class="actions">
+        <button class="detailBtn">🔍 Detail</button>
+        <button class="favBtn">💖</button>
+        <a href="https://wa.me/6281234567890?text=Saya tertarik dengan Pedang Legenda" target="_blank">💬 Beli</a>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="card novel" data-name="Grimoire Hitam" data-description="Kitab sihir hitam yang mengandung mantra kuno dan larangan dimensional.">
+      <span class="badge">Limited</span>
       <img src="assets/img/produk2.jpg" alt="Produk B">
-      <h2>Produk B: Buku Grimoire Hitam</h2>
-      <p>Sinopsis: Hanya mereka yang memahami mantra kuno yang bisa membuka lembar pertama…</p>
-      <a href="https://wa.me/6281234567890?text=Saya tertarik dengan Produk B" target="_blank">💬 Beli via WhatsApp</a>
+      <h2>Grimoire Hitam</h2>
+      <p>Buku sihir dengan isi yang hanya bisa dibaca saat bulan purnama...</p>
+      <div class="actions">
+        <button class="detailBtn">🔍 Detail</button>
+        <button class="favBtn">💖</button>
+        <a href="https://wa.me/6281234567890?text=Saya tertarik dengan Grimoire Hitam" target="_blank">💬 Beli</a>
+      </div>
     </div>
-    <!-- Tambahkan produk lainnya di sini -->
+
+    <!-- Tambahkan lebih banyak kartu produk di sini -->
   </main>
+
+  <!-- Modal Detail -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="closeBtn">&times;</span>
+      <h2 id="modalTitle">Judul Produk</h2>
+      <p id="modalDesc">Deskripsi lengkap produk akan muncul di sini.</p>
+      <button id="notifyBtn">🔔 Beri tahu saya saat tersedia</button>
+    </div>
+  </div>
+
+  <!-- Wishlist Panel -->
+  <div id="wishlist" class="wishlist">
+    <h3>❤️ Produk Favorit</h3>
+    <ul id="wishlistItems"></ul>
+  </div>
 
   <script src="script.js"></script>
 </body>
