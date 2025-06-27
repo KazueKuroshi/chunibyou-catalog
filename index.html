@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Preloader -->
   <div id="preloader">
     <div class="loader">🔮 Memanggil energi dimensi lain...</div>
   </div>
@@ -24,53 +23,24 @@
     </div>
   </header>
 
-  <!-- Filter Kategori -->
   <nav class="filter-bar">
-    <button class="filter-btn" data-filter="all">Semua</button>
+    <button class="filter-btn active" data-filter="all">Semua</button>
     <button class="filter-btn" data-filter="merch">Merch</button>
     <button class="filter-btn" data-filter="novel">Novel</button>
     <button class="filter-btn" data-filter="stiker">Stiker</button>
   </nav>
 
-  <main class="grid" id="productGrid">
-    <div class="card merch" data-name="Pedang Legenda" data-description="Senjata kuno dengan aura ungu berkedip.">
-      <span class="badge">Ultimate</span>
-      <img src="assets/img/produk1.jpg" alt="Produk A">
-      <h2>Pedang Legenda</h2>
-      <p>Senjata tersegel dari klan keempat belas...</p>
-      <div class="actions">
-        <button class="detailBtn">🔍 Detail</button>
-        <button class="favBtn">💖</button>
-        <a href="https://wa.me/6281234567890?text=Saya tertarik dengan Pedang Legenda" target="_blank">💬 Beli</a>
-      </div>
-    </div>
+  <main class="grid" id="productGrid"></main>
 
-    <div class="card novel" data-name="Grimoire Hitam" data-description="Kitab sihir hitam yang mengandung mantra kuno dan larangan dimensional.">
-      <span class="badge">Limited</span>
-      <img src="assets/img/produk2.jpg" alt="Produk B">
-      <h2>Grimoire Hitam</h2>
-      <p>Buku sihir dengan isi yang hanya bisa dibaca saat bulan purnama...</p>
-      <div class="actions">
-        <button class="detailBtn">🔍 Detail</button>
-        <button class="favBtn">💖</button>
-        <a href="https://wa.me/6281234567890?text=Saya tertarik dengan Grimoire Hitam" target="_blank">💬 Beli</a>
-      </div>
-    </div>
-
-    <!-- Tambahkan lebih banyak kartu produk di sini -->
-  </main>
-
-  <!-- Modal Detail -->
   <div id="modal" class="modal hidden">
     <div class="modal-content">
       <span class="closeBtn">&times;</span>
-      <h2 id="modalTitle">Judul Produk</h2>
-      <p id="modalDesc">Deskripsi lengkap produk akan muncul di sini.</p>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
       <button id="notifyBtn">🔔 Beri tahu saya saat tersedia</button>
     </div>
   </div>
 
-  <!-- Wishlist Panel -->
   <div id="wishlist" class="wishlist">
     <h3>❤️ Produk Favorit</h3>
     <ul id="wishlistItems"></ul>
